@@ -1,8 +1,9 @@
 # Source Code of AGBAN for Adversarial Object-aware Multimodal NER Model
-Implementation of Our Paper "Object-aware Multimodal Named Entity Recognition in Social Media Posts with Adversarial Learning" in IEEE Trans. on Multimedia. This implementation is based on the [NCRF++](https://github.com/jiesutd/NCRFpp).
+Implementation of Our Paper ["Object-aware Multimodal Named Entity Recognition in Social Media Posts with Adversarial Learning"](https://ieeexplore.ieee.org/document/9154571) in IEEE Trans. on Multimedia. This implementation is based on the [NCRF++](https://github.com/jiesutd/NCRFpp).
 
 ## Model Architecture
-
+![model](model4.png)
+The overall architecture of our model. Our model utilizes the relevant objects as auxiliary contexts for understanding entities in sentences. Adversarial learning is used to bridge the modality gap between text and visual. A gated bilinear attention network is applied to align entities with related visual objects and fuse multimodal information.
 
 ## Requirements
 * `python >= 3.6`
@@ -22,5 +23,17 @@ Set the `status` attribute in demo.train.config to `train` or `decode` , and the
    python main.py --config demo.train.config
    ```
 
+## Citation
+If you find this repo helpful, please cite the following:
+
+```
+@article{zheng2020object,
+  title={Object-aware Multimodal Named Entity Recognition in Social Media Posts with Adversarial Learning},
+  author={Zheng, Changmeng and Wu, Zhiwei and Wang, Tao and Yi, Cai and Li, Qing},
+  journal={IEEE Transactions on Multimedia},
+  year={2020},
+  publisher={IEEE}
+}
+```
 
 
