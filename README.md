@@ -1,22 +1,26 @@
+# Source Code of AGBAN for Adversarial Object-aware Multimodal NER Model
+Implementation of Our Paper "Object-aware Multimodal Named Entity Recognition in Social Media Posts with Adversarial Learning" in IEEE Trans. on Multimedia. This implementation is based on the [NCRF++](https://github.com/jiesutd/NCRFpp).
 
-# Pytorch implementation for AGBAN
+## Model Architecture
 
-## 1. Introduction
-Pytorch implementation for [Object-aware Multimodal Named Entity Recognition in Social Media Posts with Adversarial Learning](https://ieeexplore.ieee.org/document/9154571). This implementation based on the [NCRF++](https://github.com/jiesutd/NCRFpp).
 
-## 2. Requirements
-1. Python 3.6 or higher
-2. Pytorch 1.1.0 or higher
-4. You need to download the word embedding from [glove.twitter.27B.zip](http://nlp.stanford.edu/data/glove.twitter.27B.zip)
-4. You can download the multimodal Tweet data from [twitter2015](https://github.com/jefferyYu/UMT)
+## Requirements
+* `python >= 3.6`
+* `pytorch >= 1.1.0`
+* `NCRF++`
 
-## 3. Usage
-1. set the `status` attribute in demo.train.config to `train` or `decode` , and then
+## Data Format
+* You can download the multimodal dataset from  [twitter2015](https://github.com/jefferyYu/UMT)
+* We adopt the glove embeddings to initialize our model which can be downloaded [here](http://nlp.stanford.edu/data/glove.twitter.27B.zip)
+* We preprocess the visual contents and extract the object features with [Mask-RCNN](https://github.com/matterport/Mask_RCNN). The preprocessed data will be available upon request.
+
+
+## Usage
+Set the `status` attribute in demo.train.config to `train` or `decode` , and then
 
    ```
    python main.py --config demo.train.config
    ```
 
-   ​
 
 
