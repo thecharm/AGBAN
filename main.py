@@ -570,35 +570,6 @@ def train(data):
         else:
             print("Dev: time: %.2fs speed: %.2fst/s; acc: %.4f" % (dev_cost, speed, acc))
 
-        # # ## decode test
-        # speed, acc, p, r, f, _, _ = evaluate(data, model, "test")
-        # test_finish = time.time()
-        # test_cost = test_finish - dev_finish
-        # if data.seg:
-        #     current_score = f
-        #     current_p = p
-        #     current_r = r
-        #     print("Test: time: %.2fs, speed: %.2fst/s; acc: %.4f, p: %.4f, r: %.4f, f: %.4f" % (
-        #     test_cost, speed, acc, p, r, f))
-        # else:
-        #     current_score = acc
-        #     current_p = p
-        #     current_r = r
-        #     print("Test: time: %.2fs, speed: %.2fst/s; acc: %.4f" % (test_cost, speed, acc))
-
-        # if current_score > best_dev:
-        #     if data.seg:
-        #         print("Exceed previous best f score:", best_dev)
-        #     else:
-        #         print("Exceed previous best acc score:", best_dev)
-        #     model_name = data.model_dir + '.' + str(idx) + ".model"
-        #     print("Save current best model in file:", model_name)
-        #     torch.save(model.state_dict(), model_name)
-        #     best_dev = current_score
-        #     best_index_p = current_p
-        #     best_index_r = current_r
-        #     best_epoch = idx
-        # print("Epoch: %s | Best epoch: %s, p: %.4f, r: %.4f, f: %.4f" % (idx, best_epoch, best_index_p, best_index_r, best_dev))
         gc.collect()
 
     #     # save epoch loss
