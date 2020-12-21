@@ -511,24 +511,11 @@ def train(data):
                                                                                                  t_modal_label,
                                                                                                  v_mask, alpha)
             right, whole = predict_check(tag_seq, batch_label, mask, data.sentence_classification)
-            # if t_clf_out is not None:
-            #     t_acc, v_acc, all_modal_acc = modal_clf_acc(t_clf_out, v_clf_out, t_modal_label, v_modal_label)
-            # else:
-            #     t_acc, v_acc, all_modal_acc = 0.0, 0.0, 0.0
             right_token += right
             whole_token += whole
-            # batch_acc.append((t_acc, v_acc, all_modal_acc))
-            # print("loss:",loss.item())
-            sample_loss += loss.item()
-            # ner_sample_loss += ner_loss.item()
-            # v_sample_loss += v_loss.item()
-            # t_sample_loss += t_loss.item()
-            # total_loss += loss.item()
-            # save loss
+            sample_loss += loss.item()            
             epoch_total_loss.append(loss.item())
-            # epoch_ner_loss.append(ner_loss.item())
-            # epoch_v_loss.append(v_loss.item())
-            # epoch_t_loss.append(t_loss.item())
+           
 
             if end % 500 == 0:
                 temp_time = time.time()
@@ -541,7 +528,7 @@ def train(data):
                     exit(1)
                 sys.stdout.flush()
                 sample_loss = 0
-                # ner_sample_loss, v_sample_loss, t_sample_loss = 0, 0, 0
+
 
             loss.backward()
             optimizer.step()
