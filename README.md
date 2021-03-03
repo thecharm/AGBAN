@@ -13,8 +13,7 @@ The overall architecture of our model. Our model utilizes the relevant objects a
 ## Data Format
 * You can download the multimodal dataset from  [twitter2015](https://github.com/jefferyYu/UMT)
 * We adopt the glove embeddings to initialize our model which can be downloaded [here](http://nlp.stanford.edu/data/glove.twitter.27B.zip)
-* We preprocess the visual contents and extract the object features with [Mask-RCNN](https://github.com/matterport/Mask_RCNN). The preprocessed data will be available upon request.
-
+* We preprocess the visual contents and extract the object features with [Mask-RCNN](https://github.com/matterport/Mask_RCNN). The preprocessed object feature data can be downloaded [here](https://drive.google.com/file/d/1WTSJS8l1x8s_L2ay5lwWnXV6d5w8G4xz/view?usp=sharing)
 
 ## Usage
 Set the `status` attribute in demo.train.config to `train` or `decode` , and then
